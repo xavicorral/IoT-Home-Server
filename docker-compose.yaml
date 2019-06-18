@@ -1,0 +1,21 @@
+version: "3.6"
+
+services:
+
+  node-red:
+    image: nodered/node-red-docker
+    ports:
+      - "1880:1880"
+    volumes:
+      - "./data/nodered:/data"
+
+
+  influxdb:
+    image: quay.io/influxdb/influxdb:2.0.0-alpha
+    ports:
+      - "9999:9999"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
